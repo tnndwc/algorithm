@@ -25,13 +25,25 @@ int median3(int arr[], int left, int right){
 
     }
 
+    int tmp;
     for (int i = 0; i < size; ++i) {
-        printf("arr_ %d = %d\n", i, arr_[i]);
+        for (int j = i + 1; j < size; ++j) {
+            if(arr_[i] > arr_[j]){
+                tmp = arr_[i];
+                arr_[i] = arr_[j];
+                arr_[j] = tmp;
+            }
+        }
     }
 
+   /* for (int i = 0; i < size; ++i) {
+        printf("arr_ %d = %d\n", i, arr_[i]);
+    }*/
+
+    tmp = arr_[size / 2];
     free(arr_);
     free(hash);
-    return 0;
+    return tmp;
 }
 
 /*void quick_select(int s[], int k, int left, int right){
@@ -55,7 +67,8 @@ int main(){
     printf("random-max=%d\n", b);
 
     int arr[] = {1, 3, 0, 100, 9, 7, 999};
-    median3(arr, 0, 6);
+    int m3 = median3(arr, 0, 6);
+    printf("m3=%d\n", m3);
 
     return 0;
 }
