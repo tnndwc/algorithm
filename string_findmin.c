@@ -2,9 +2,10 @@
 #include <string.h>
 #include <stdlib.h>
 #include "random_util.h"
+#include "insert_sort.h"
 
 
-int median3(int arr[], int left, int right){
+int median3(int arr[], int left, int right) {
     int max = right - left;
 
     int size = 3;
@@ -16,7 +17,7 @@ int median3(int arr[], int left, int right){
     int index;
     for (int i = 0; i < size; ++i) {
 
-        while ( hash[(index = (int) get_random_max(max))] > 0 ){
+        while (hash[(index = (int) get_random_max(max))] > 0) {
             index = (int) get_random_max(max);
         }
 
@@ -28,7 +29,7 @@ int median3(int arr[], int left, int right){
     int tmp;
     for (int i = 0; i < size; ++i) {
         for (int j = i + 1; j < size; ++j) {
-            if(arr_[i] > arr_[j]){
+            if (arr_[i] > arr_[j]) {
                 tmp = arr_[i];
                 arr_[i] = arr_[j];
                 arr_[j] = tmp;
@@ -36,9 +37,9 @@ int median3(int arr[], int left, int right){
         }
     }
 
-   /* for (int i = 0; i < size; ++i) {
-        printf("arr_ %d = %d\n", i, arr_[i]);
-    }*/
+    /* for (int i = 0; i < size; ++i) {
+         printf("arr_ %d = %d\n", i, arr_[i]);
+     }*/
 
     tmp = arr_[size / 2];
     free(arr_);
@@ -58,7 +59,7 @@ int median3(int arr[], int left, int right){
 }*/
 
 
-int main(){
+int main() {
 
     int a = get_random();
     printf("random=%d\n", a);
@@ -66,9 +67,16 @@ int main(){
     int b = get_random_max(11);
     printf("random-max=%d\n", b);
 
-    int arr[] = {1, 3, 0, 100, 9, 7, 999};
+    int arr[] = {1, 3, 0, 100, 9, 7, 2};
     int m3 = median3(arr, 0, 6);
     printf("m3=%d\n", m3);
+
+    //Insert Sort
+    insert_sort(arr, 7);
+
+    for (int i = 0; i < 7; ++i) {
+        printf("sort: arr[%d]=%d\n", i, arr[i]);
+    }
 
     return 0;
 }
