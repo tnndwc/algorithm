@@ -1,3 +1,9 @@
+
+
+//
+//随机数相关
+//
+
 #include <time.h>
 #include <stdlib.h>
 
@@ -30,6 +36,19 @@ long get_random_max(long max) {
 
     do {
         retval = rand() / divisor;
+    } while (retval > max);
+
+    return retval;
+}
+
+
+//生成有边界的随机数:[min, max]
+long get_random_range(long min, long max) {
+    unsigned long divisor = (unsigned long) (RAND_MAX / (max - min + 1)), retval;
+
+    do {
+        retval = rand() / divisor;
+        retval += min;
     } while (retval > max);
 
     return retval;
