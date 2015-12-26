@@ -6,7 +6,7 @@
 
 #include <time.h>
 #include <stdlib.h>
-
+#include <stdio.h>
 long get_random() {
     srand(time(NULL));
     return rand();

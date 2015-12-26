@@ -5,5 +5,5 @@ set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -Wall -Werror")
 
 set(SOURCE_FILES
         #string_manacher.c
-        string_findmin.c random_util.h random_util.c insert_sort.c insert_sort.h )
+        string_sort_min.c random_util.h random_util.c insert_sort.c insert_sort.h )
 add_executable(algorithm ${SOURCE_FILES})
