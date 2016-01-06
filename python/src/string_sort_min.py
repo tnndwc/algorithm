@@ -31,3 +31,44 @@ def median3(s, left, right):
 
     return s[m]
 
+
+def quick_select(s, k, left, right):
+    """
+    寻找最小的K个数
+    :param s:
+    :param k: k个数
+    :param left:
+    :param right:
+    :return:
+    """
+    if left <= right:
+        pivot = median3(s, left, right)
+        i = left
+        j = right - 1
+
+        while True:
+            while s[++i] < pivot:
+                pass
+
+            while s[--j] > pivot:
+                pass
+
+            if i < j:
+                swap(s, i, j)
+            else:
+                break
+
+        swap(s, i, right - 1)
+
+        if k <= i:
+            quick_select(s, k, left, i - 1)
+        elif k > i + 1:
+            quick_select(s, k, i + 1, right)
+
+
+def swap(s, i, j):
+    tmp = s[i]
+    s[i] = s[j]
+    s[j] = tmp
+
+
