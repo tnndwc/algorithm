@@ -49,11 +49,11 @@ def quick_select(s, k, left, right):
         while True:
 
             i += 1
-            while i <= right and s[i] < pivot:
+            while s[i] < pivot:
                 i += 1
 
             j -= 1
-            while j >= 0 and s[j] > pivot:
+            while s[j] > pivot:
                 j -= 1
 
             if i < j:
