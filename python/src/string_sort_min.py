@@ -11,7 +11,7 @@ def median3(s, left, right):
     :param s:
     :param left:
     :param right:
-    :return:
+    :return: s中：left, middle(　（left+right） >>１　), right三个数的中值
     """
     m = (left + right) >> 1
     if s[left] > s[m]:
@@ -39,7 +39,7 @@ def quick_select(s, k, left, right):
     :param k: k个数
     :param left:
     :param right:
-    :return:
+    :return:　无
     """
     if left <= right:
         pivot = median3(s, left, right)
@@ -67,6 +67,13 @@ def quick_select(s, k, left, right):
 
 
 def swap(s, i, j):
+    """
+    交换列表中的两个元素，无返回值
+    :param s:
+    :param i:
+    :param j:
+    :return: 无
+    """
     tmp = s[i]
     s[i] = s[j]
     s[j] = tmp
