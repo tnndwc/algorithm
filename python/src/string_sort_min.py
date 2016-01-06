@@ -41,17 +41,20 @@ def quick_select(s, k, left, right):
     :param right:
     :return:　无
     """
-    if left <= right:
+    if left < right:
         pivot = median3(s, left, right)
         i = left
         j = right - 1
 
         while True:
-            while s[++i] < pivot:
-                pass
 
-            while s[--j] > pivot:
-                pass
+            i += 1
+            while i <= right and s[i] < pivot:
+                i += 1
+
+            j -= 1
+            while j >= 0 and s[j] > pivot:
+                j -= 1
 
             if i < j:
                 swap(s, i, j)
@@ -77,5 +80,3 @@ def swap(s, i, j):
     tmp = s[i]
     s[i] = s[j]
     s[j] = tmp
-
-
