@@ -61,7 +61,9 @@ def quick_select(s, k, left, right):
             else:
                 break
 
-        #swap(s, i, right - 1)
+        swap(s, i, right - 1)
+
+        print s
 
         if k <= i:
             quick_select(s, k, left, i - 1)
