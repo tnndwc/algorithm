@@ -3,7 +3,7 @@
 """
 寻找最小的K个数
 """
-
+from utils import swap
 
 def median3(s, left, right):
     """
@@ -70,15 +70,5 @@ def quick_select(s, k, left, right):
         elif k > i + 1:
             quick_select(s, k, i + 1, right)
 
-
-def swap(s, i, j):
-    """
-    交换列表中的两个元素，无返回值
-    :param s:
-    :param i:
-    :param j:
-    :return: 无
-    """
-    tmp = s[i]
-    s[i] = s[j]
-    s[j] = tmp
+    else:
+        print '----'
