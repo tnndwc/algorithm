@@ -9,5 +9,7 @@ for f in abc:
     model[f] += c
 
 print model
+print model.get('ab')
 
+print max(['ab', 'cd'], key=model.get)
 print max(set(a for a in abc), key=model.get)
