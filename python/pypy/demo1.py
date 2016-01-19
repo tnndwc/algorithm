@@ -1,3 +1,13 @@
+# -*- coding: utf-8 -*-
+
+"""
+Python:
+--- 11.3639998436 seconds ---
+
+PyPy:
+--- 0.578999996185 seconds ---
+"""
+
 import time
 
 
