@@ -2,10 +2,10 @@
 
 """
 Python:
---- 0.477239131927 seconds ---
+--- 0.533946037292 seconds ---
 
 PyPy:
---- 0.0114500522614 seconds ---
+--- 0.00886797904968 seconds ---
 """
 
 import time
@@ -15,6 +15,9 @@ def main():
     i = 10000000
     while i:
         i -= 1
+        if i < 100:
+            break
+    return i
 
 start_time = time.time()
 main()
