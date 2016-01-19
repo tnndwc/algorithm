@@ -1,19 +1,21 @@
 # -*- coding: utf-8 -*-
 
 """
-200万以内的素数之和
+5000万以内的素数之和(简单的数字处理采用即时编译)
 Python:
---- 0.834000110626 seconds ---
+72619548630277
+--- 23.4359998703 seconds ---
 
 PyPy:
---- 0.055999994278 seconds ---
+72619548630277
+--- 1.58999991417 seconds ---
 """
 import time
 import math
 
 
 def calc():
-    n = 2000000
+    n = 50000000
     prime = [i for i in range(1, n + 1)]
     r = int(math.sqrt(n))
     for j in range(2, r + 1):
