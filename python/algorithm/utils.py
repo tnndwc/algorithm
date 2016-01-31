@@ -31,7 +31,7 @@ def reverse(s, m, n):
 
     s_list = list(s)
 
-    if n > len(s_list) - 1:
+    if n > len(s_list) - 1 or m < 0:
         raise IndexError("s index out of range")
 
     y = (n + m) / 2
