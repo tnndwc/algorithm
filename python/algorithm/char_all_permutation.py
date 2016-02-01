@@ -4,13 +4,13 @@
 字符串全排列
 """
 
-from utils import swap
+from utils import swap, reverse
 
 
 def recursion(strings, n_from, n_to):
     """
     用递归方法
-    :param strings:
+    :param strings: 是一个list
     :param n_from:
     :param n_to:
     :return:
@@ -30,9 +30,9 @@ def recursion(strings, n_from, n_to):
 def dict_order(strings, num):
     """
     按照字典顺序全排列
-    :param strings:
+    :param strings:是一个list
     :param num:
-    :return:
+    :return:排列组合未结束返回True, 否则返回False
     """
     i = num - 2
 
@@ -41,7 +41,7 @@ def dict_order(strings, num):
         i -= 1
 
     if i < 0:
-        return
+        return False
 
     k = num - 1
 
@@ -50,9 +50,8 @@ def dict_order(strings, num):
         k -= 1
 
     swap(strings, i, k)
-
-
-
+    reverse(strings, i + 1, num)
+    return True
 
 
 def print_str(strings):
@@ -61,3 +60,7 @@ def print_str(strings):
 
 def cal_recursion(strings, n_from, n_to):
     recursion(list(strings), n_from, n_to)
+
+
+def cal_dict_order(strings, num):
+    print dict_order(list(strings), num)

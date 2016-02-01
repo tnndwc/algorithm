@@ -26,10 +26,8 @@ def reverse(s, m, n):
     :param n:
     :return: list的翻转字符串
     """
-    if not isinstance(s, str):
-        raise TypeError("s is not a string")
-
-    s_list = list(s)
+    if isinstance(s, str):
+        s_list = list(s)
 
     if n > len(s_list) - 1 or m < 0:
         raise IndexError("s index out of range")
