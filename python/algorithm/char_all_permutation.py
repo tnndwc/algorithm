@@ -5,6 +5,7 @@
 """
 
 from utils import swap, reverse
+import math
 
 
 def recursion(strings, n_from, n_to):
@@ -63,4 +64,10 @@ def cal_recursion(strings, n_from, n_to):
 
 
 def cal_dict_order(strings, num):
-    print dict_order(list(strings), num)
+    strings_list = list(strings)
+    # factorial 阶乘
+    for i in xrange(math.factorial(num)):
+        flag = dict_order(strings_list, num)
+        if not flag:
+            break
+    return ''.join(strings_list)
