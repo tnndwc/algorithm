@@ -18,16 +18,16 @@ def swap(s, i, j):
     s[j] = tmp
 
 
-def reverse(s, m, n):
+def reverse(s_list, m, n):
     """
     反转s[m..n]之间的数据
-    :param s: s是一个字符串
+    :param s_list: 是一个字符串
     :param m:
     :param n:
     :return: list的翻转字符串
     """
-    if isinstance(s, str):
-        s_list = list(s)
+    if isinstance(s_list, str):
+        s_list = list(s_list)
 
     if n > len(s_list) - 1 or m < 0:
         raise IndexError("s index out of range")
