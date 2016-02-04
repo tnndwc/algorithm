@@ -6,5 +6,5 @@ from utils import reverse
 s = '12345'
 
 # cal_recursion(s, 0, len(s))
-# print reverse(s, 0, len(s) - 1)
-cal_dict_order(s, len(s))
+print reverse(s, 0, len(s) - 1)
+# cal_dict_order(s, len(s))

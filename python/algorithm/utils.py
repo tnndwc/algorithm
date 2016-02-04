@@ -29,11 +29,21 @@ def reverse(s_list, m, n):
     if isinstance(s_list, str):
         s_list = list(s_list)
 
-    if n > len(s_list) - 1 or m < 0:
-        raise IndexError("s index out of range")
+    s_list_size = len(s_list)
 
-    y = (n + m) / 2
-    if (n + m) % 2 > 0:
+    if m >= n or m >= s_list_size:
+        return ''.join(s_list)
+
+    if n > s_list_size - 1:
+        n = s_list_size - 1
+
+    if m < 0:
+        m = 0
+        # if n > len(s_list) - 1 or m < 0:
+        # raise IndexError("s index out of range")
+
+    y = (n - m) / 2
+    if (n - m) % 2 > 0:
         y += 1
 
     index = m
