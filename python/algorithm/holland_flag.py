@@ -30,7 +30,12 @@ def holland(ball):
     # 前指针
     begin = 0
 
-    for n in xrange(ball_size):
-        print n
+    for current in xrange(ball_size):
+        if ball[current] == 0:
+            ball[begin] = ball[current]
+            begin += 1
+        elif ball[current] == 2:
+            ball[end] = ball[current]
+            end -= 1
 
     return ball
