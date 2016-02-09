@@ -25,7 +25,7 @@ def holland(ball):
         return ball
 
     # 中指针
-    current = 1
+    current = 0
 
     # 前指针
     begin = 0
