@@ -3,6 +3,7 @@
 """
 荷兰国旗问题
 """
+from utils import swap
 
 
 def holland(ball):
@@ -30,12 +31,15 @@ def holland(ball):
     # 前指针
     begin = 0
 
-    for current in xrange(ball_size):
+    while current < end:
         if ball[current] == 0:
-            ball[begin] = ball[current]
+            swap(ball, current, begin)
             begin += 1
+            current += 1
+        elif ball[current] == 1:
+            current += 1
         elif ball[current] == 2:
-            ball[end] = ball[current]
+            swap(ball, current, end)
             end -= 1
 
     return ball

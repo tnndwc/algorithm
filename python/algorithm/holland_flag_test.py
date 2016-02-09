@@ -11,7 +11,7 @@
 
 from holland_flag import holland
 
-ball = [1, 0, 2, 1, 1, 2, 1, 0, 2, 1]
+ball = [1, 0, 2, 1, 1, 2, 1, 0, 2, 1, 2]
 print 'ball size = ', len(ball)
 
 print holland(ball)
