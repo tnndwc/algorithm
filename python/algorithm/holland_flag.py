@@ -39,6 +39,7 @@ def holland(ball):
         elif ball[current] == 1:
             current += 1
         elif ball[current] == 2:
+            # 此处最重要的是等于2时,current保持不变,因为交换之后不知道end的值,需要再次比对
             swap(ball, current, end)
             end -= 1
 
